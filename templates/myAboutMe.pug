@@ -1,0 +1,38 @@
+include theNav.pug
+
+DOCTYPE(html)
+html(lang="en")
+head
+    meta(charset="UTF-8")
+    title About Me Page
+    link(rel="stylesheet" href="/css/myStyle.css")
+body
+    +navbar(username)
+    div(id="aboutmepage")
+        h1(class="pageitem") Jacob Thompson
+        img(class="pageitem" id="dogpic" src="/images/Pepper.jpg" alt="Dog panting in grass")
+        div(class="cardsection")
+            div(class="card")
+                h2 Intro
+                p
+                    strong I'm Jacob
+                    | . I'm a computer science student taking 
+                    b 4131 Internet Programing 
+                    | . I have little experience with web development but have worked with back end 
+                    | unit testing at an internship this summer.
+                p
+                    | Pictured above is my 
+                    i Australian Cattle Dog
+                    |  named Pepper. We got her from a 
+                    | rescue shelter last year. When she is not chasing squirrels she enjoys eating 
+                    | just about anything that falls to the ground, dog parks, and long walks.
+                p 
+                    | I am a much bigger fan of laying around all day and watching netflix that my dog 
+                    | so we compromise and go outside every now and again. Recently I have gotten into 
+                    | gardening and have a successful crop of tomatoes and fresh basil to to make pesto 
+                    | with.
+            div(class="card")
+                h2 Hobbies
+                ul
+                    li Music
+                    li Other stuff

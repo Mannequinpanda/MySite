@@ -1,0 +1,27 @@
+include theNav.pug
+
+DOCTYPE(html)
+html(lang="en")
+head
+    meta(charset="UTF-8")
+    title Login
+    link(rel="stylesheet" href="/css/myStyle.css")
+body
+    +navbar(username)
+    div#loginpage
+        if(username == "login")
+            h1 Log in?
+            div#loginbox
+                form(action="/login" method="post")
+                    label(for="username") username: 
+                    input(type="text" name="username" id="username" required)
+                    br
+                    label(for="password") password: 
+                    input(type="text" name="password" id="password" required)
+                    br
+                    input(type="submit")
+        else
+            h1 Log out?
+            div#loginbox
+                form(action="/logout" method="post")
+                    input(type="submit" value="Log out")

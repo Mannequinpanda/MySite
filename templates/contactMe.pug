@@ -1,0 +1,56 @@
+include theNav.pug
+
+DOCTYPE(html)
+html(lang="en")
+head
+    meta(charset="UTF-8")
+    title Contact Me
+    link(rel="stylesheet" href="/css/myStyle.css")
+    script(src="/js/contactMe.js" defer)
+body
+    +navbar(username)
+    div(id="contactform")
+        if recieved 
+            h2#recMessage Your message has been recieved!
+        form(action="/contactLog" method="post")
+            h1 Contact Me
+            p Required fields are marked with 
+                span(id="star") *
+            label(for="postTitle") Title: 
+                span(id="star") *
+            br
+            input(type="text" name="postTitle" id="postTitle" required)
+            br
+            label(for="email") Email: 
+                span(id="star") *
+            br
+            input(type="text" name="email" id="email" pattern=".*@.*" required)
+            br
+            label(for="username") Username: 
+                span(id="star") *
+            br
+            input(type="text" name="username" id="username" required)
+            br
+            label(for="link") Link: 
+                span(id="star") *
+            br
+            input(type="text" name="link" id="link" pattern="^(http|https):/.*")
+            br
+            fieldset
+                legend Category of message 
+                    span(id="star") *
+                input(type="radio" id="question" name="category" value="question" required)
+                label(for="question") Question
+                br
+                input(type="radio" id="comment" name="category" value="comment" required)
+                label(for="comment") Comment
+                br
+                input(type="radio" id="concern" name="category" value="concern" required)
+                label(for="concern") Concern
+                br
+            p(id="concernBox" hidden) In order to best address your concern, please make sure to list the specific way in which I have wronged you
+            label(for="message") Message: 
+                span(id="star") * 
+            br
+            textarea(name="message" id="message" required)
+            input(type="submit")

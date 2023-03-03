@@ -1,0 +1,30 @@
+{
+  "dependencies": {
+    "aws-sdk": "^2.1292.0",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "mysql": "^2.18.1",
+    "node": "^19.3.0",
+    "nodemon": "^2.0.20",
+    "pug": "^3.0.2",
+    "uuid": "^9.0.0"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "mysite",
+  "description": "This will work as a basic template for my personal website",
+  "version": "1.0.0",
+  "main": "db.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mannequinpanda/MySite.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mannequinpanda/MySite/issues"
+  },
+  "homepage": "https://github.com/Mannequinpanda/MySite#readme"
+}

@@ -1,0 +1,42 @@
+include theNav.pug
+
+DOCTYPE(html)
+html(lang="en")
+head
+    meta(charset="UTF-8")
+    title Contacts
+    link(rel="stylesheet" href="/css/myStyle.css")
+    script(src="/js/contactLog.js" defer)
+body
+    +navbar(username)
+    div#contactLog
+        form
+            input#all(type="radio", name="filter" value="all" checked)
+            label(for="all") All
+            input#question(type="radio", name="filter" value="question")
+            label(for="question") Question
+            input#concern(type="radio", name="filter" value="concern")
+            label(for="concern") Concern
+            input#comment(type="radio", name="filter" value="comment")
+            label(for="comment") Comment  
+        table#logTable
+            tbody
+                tr
+                    th From
+                    th Title 
+                    th Category 
+                    th Message
+                each log in logs
+                    tr
+                        if log.link != "" 
+                            td
+                                a(href=log.link)= log.username
+                                br
+                                a(href="mailto::"+log.email)= log.email
+                        else
+                            td= log.username
+                                br
+                                a(href="mailto::"+log.email)= log.email
+                        td= log.title 
+                        td= log.category
+                        td= log.msg

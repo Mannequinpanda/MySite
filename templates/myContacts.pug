@@ -1,0 +1,93 @@
+include theNav.pug
+
+DOCTYPE(html)
+html(lang="en")
+head
+    meta(charset="UTF-8")
+    title Contacts
+    link(rel="stylesheet" href="/css/myStyle.css")
+    script(src="/js/myContacts.js" defer)
+body
+    +navbar(username)
+    h1 My Primary Contacts
+    div(id="contactspage")
+        table(id="contacts")
+            tbody
+                tr
+                    th(id="name_header") Name
+                    th(id="location_header") Location
+                    th(id="contact_header") Contact Information
+                    th(id="email_header") email
+                    th(id="website_header") website
+                tr(class="datarow")
+                    td Jacob Thompson
+                    td(class="address")
+                        span
+                            | 1618 5th St NE
+                            br
+                            | Minneapolis, MN 55413
+                            br
+                        img(src="/images/16185thSt.jpg" alt="house" hidden)
+                    td Student of 4131 Fall 22
+                    td
+                        a(href="mailto:thom4762@umn.edu") thom4762@umn.edu
+                    td
+                        a(href="myAboutMe.html") my about me
+                tr(class="datarow")
+                    td Pepper
+                    td(class="address")
+                        span
+                            | 1618 5th St NE
+                            br
+                            | Minneapolis, MN 55413
+                            br
+                        img(src="/images/16185thSt.jpg" alt="house" hidden)
+                    td Dog
+                    td
+                        a(href="mailto:thom4762@umn.edu") pepper0001@umn.edu
+                    td
+                        a(href="https://www.akc.org/dog-breeds/australian-cattle-dog/") Cattle Dog Info
+                tr(class="datarow")
+                    td Asparagus Crudite
+                    td(class="address")
+                        span
+                            | 123 Blumbo St
+                            br
+                            | Minneapolis, MN 55455
+                            br
+                        img(src="/images/Garden.jpg" alt="garden" hidden)
+                    td Fake person
+                    td
+                        a(href="mailto:veggies@hotmail.com") veggies@hotmail.com
+                    td
+                        a(href="https://www.bonappetit.com/dish/crudite") Create crudite
+                tr(class="datarow")
+                    td Tom Bombadil
+                    td(class="address")
+                        span
+                            | 123 Barrow-downs Dr
+                            br
+                            | Old Forest, Middle earth
+                            br
+                        img(src="/images/BombadilCottage.jpg" alt="forest cottage" hidden)
+                    td Mysterious and powerful hermit 
+                    td 
+                        //Tom does not have email
+                    td
+                        a(href="https://en.wikipedia.org/wiki/Tom_Bombadil") Wiki article
+                tr(class="datarow")
+                    td Bilbo Baggins
+                    td(class="address")
+                        span
+                            | Bag End
+                            br
+                            | 1 Bagshot Row
+                            br
+                            | Hobbiton, Shire, 12345
+                        img(src="/images/BagEnd.jpg" alt="hobbit hole" hidden)
+                    td Burglar
+                    td 
+                        //Bilbo cannot be reached by email
+                    td
+                        a(href="https://en.wikipedia.org/wiki/Bilbo_Baggins") Wiki of exploits
+        img(id="contactpic" src="/images/gophers-mascot.png" alt="Goldy the gopher")

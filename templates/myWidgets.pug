@@ -1,0 +1,82 @@
+include theNav.pug
+
+DOCTYPE(html)
+html(lang="en")
+head
+    meta(charset="UTF-8")
+    title Widgets
+    link(rel="stylesheet" href="/css/myStyle.css")
+
+    //assignment files
+    link(rel="stylesheet" href="/css/passwordWidget.css")
+    link(rel="stylesheet" href="/css/timeWidget.css")
+    link(rel="stylesheet" href="/css/weatherWidget.css")
+    link(rel="stylesheet" href="/css/clickWidget.css")
+    script(async defer src="/js/passwordWidget.js")
+    script(async defer src="/js/timeWidget.js")
+    script(async defer src="/js/weatherWidget.js")
+    script(async defer src="/js/clicker.js")
+
+body
+    +navbar(username)
+    h1 Widgets
+    div(id="widgetPage")
+        div(class="widgetCol")
+            // From https://www.youtube.com/watch?v=4Tr0otuiQuU
+            iframe(width="560" height="315" src="https://www.youtube.com/embed/4Tr0otuiQuU" title="YouTube video player"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen)
+            div(id="passwordContainer")
+                div(id="header")
+                    h2 Password Strength Checking with JS
+                    hr
+                div(id="content")
+                    form(id="register" name="register")
+                        label(for="password") Password : 
+                        input(name="password" id="password" type="password" placeholder="Type Your Password here") 
+                        | &nbsp; &nbsp; 
+                        span(id="pwdresult")
+        div(class="widgetCol")
+            // From https://publish.twitter.com/?query=https%3A%2F%2Ftwitter.com%2FGarfield%2Fstatus%2F1568995533917749252&widget=Tweet
+            blockquote(class="twitter-tweet") 
+                p(lang="en" dir="ltr") you cannot make everybody happy,... you are not a lasagna. &mdash; Garfield (@Garfield) 
+                a(href="https://twitter.com/Garfield/status/1568995533917749252?ref_src=twsrc%5Etfw") September 11, 2022 
+                script(async src="https://platform.twitter.com/widgets.js")
+            div(id="timeContainer")
+                div(id="timeHeader")
+                    h2 Time until the end of the semester
+                    hr
+                div(id="timeContent")
+                    span(id="timeUntil") 00 Days 00 Hours 00 Minutes 00 Seconds.
+        div(class="widgetCol")
+            // From https://giphy.com/gifs/studiosoriginals-welcome-back-w1d6ofz0eA3me9xiJz
+            div 
+                iframe(src="https://giphy.com/embed/w1d6ofz0eA3me9xiJz" width="480" height="407" class="giphy-embed" allowFullScreen) 
+                    p
+                        a(href="https://giphy.com/gifs/studiosoriginals-welcome-back-w1d6ofz0eA3me9xiJz") via GIPHY
+        div(class="widgetCol")
+            div(id="weatherContainer")
+                div(id="weatherHeader")
+                    h2 weather
+                    hr
+                div(id="weatherContent")
+                    p(id="weatherStatus")
+                    div
+                        span Coordinates:
+                        input(id="latitude-input" type="text" placeholder="Latitude")
+                        input(id="longitude-input" type="text" placeholder="Longitude")
+                    div
+                        button(id="find-me" type="button") Auto-Find me!
+                        button(id="get-weather-btn" type="button") Find The Weather!
+                    div(id="weatherOutput")
+                        p(id="temp-display")
+                        p(id="cloud-cover-display")
+                        p(id="sunrise-display")
+                        p(id="sunset-display")
+                    // Interesting fact. We're legally required to put this here.
+                    a(href="https://open-meteo.com/") Weather data by Open-Meteo.com
+                    a(href="https://sunrise-sunset.org/") Sunrise and sunset data by sunrise-sunset.org
+            div(id="clickContainer")
+                div(id="clickHeader")
+                    h2 Click Toy
+                    hr
+                div(id="clickContent")
+                    button(id="clicker" type="button")= clickCount
